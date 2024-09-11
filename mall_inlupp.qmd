@@ -29,41 +29,68 @@ editor: visual
 #| output: false
 #| echo: false
 # Denna chunk ska innehålla alla paket ni använder
+library(remotes)
 library(SUdatasets)
 library(plotly)
 library(mvtnorm)
+library(tidyverse)
+library(reshape2)
 ```
 
 # Uppgift 1.1
 
 För varje deluppgift gäller
 
-- Välmotiverade, korrekta svar
-- Tolkning/beskrivning av resultat
-- Eventuella figurer ska ha titlar och informativa axlar
+-   Välmotiverade, korrekta svar
+-   Tolkning/beskrivning av resultat
+-   Eventuella figurer ska ha titlar och informativa axlar
 
 ```{r}
-# Exempelchunk
-hist(rnorm(100), main = "Histogram, 100 slumpdragningar")
+# Read df
+df<-read.delim("doctorvisits.txt",sep =" ")
 ```
 
+```{r}
+
+hist(df$numvisit, col = "brown", breaks= 10)
+hist(df$age, col = "pink", breaks= 30)
+
+
+maxlength_educ <- round(max(df$educ))
+hist(df$educ, col = "brown", breaks= maxlength_educ)
+hist(df$loginc, col = "pink", breaks= 30)
+```
+
+# Heatmap
+
+```{r}
+# Correlation matrix
+corr_matrix <- cor(df[sapply(df, is.numeric)])
+# tidyplot needs long format use melt()
+corr_matrix <- melt(corr_matrix)
+
+ggplot(corr_matrix, aes(x = Var1, y= Var2, fill=value)) + 
+  geom_tile() + scale_fill_gradient2(
+    low = "white",      
+    mid = "brown",      
+    high = "red",      
+    midpoint = 0.5,       
+    name = "Correlation"
+  ) +
+  ggtitle("Correlation matrix") +
+  labs(x= NULL, y = NULL)
+```
 
 # Uppgift 1.2
 
-
 # Uppgift 1.3
-
 
 # Uppgift 1.4
 
-
 # Uppgift 1.5
-
 
 # Uppgift 1.6
 
-
 # Uppgift 1.7
-
 
 # Uppgift 1.8
