@@ -1,0 +1,69 @@
+---
+title: "Statistik och dataanalys III, 15 hp "
+subtitle: "Inlämningsuppgift 1, 1.5 hp"
+author: 
+- Namn 1
+- Namn 2
+- Namn 3
+date: last-modified
+format: 
+  html:
+    self-contained: true
+    code-line-numbers: true
+  pdf: default  
+  docx: default
+toc: true
+language: 
+  title-block-author-single: " "
+toc-title-document: "Innehåll"
+crossref-fig-title: "Figur"
+theme: Superhero
+title-block-banner-color: Primary
+title-block-published: "Publicerad"
+author-title: "Gruppmedlemmar"
+title-block-banner: true
+editor: visual
+---
+
+```{r}
+#| output: false
+#| echo: false
+# Denna chunk ska innehålla alla paket ni använder
+library(SUdatasets)
+library(plotly)
+library(mvtnorm)
+```
+
+# Uppgift 1.1
+
+För varje deluppgift gäller
+
+- Välmotiverade, korrekta svar
+- Tolkning/beskrivning av resultat
+- Eventuella figurer ska ha titlar och informativa axlar
+
+```{r}
+# Exempelchunk
+hist(rnorm(100), main = "Histogram, 100 slumpdragningar")
+```
+
+
+# Uppgift 1.2
+
+
+# Uppgift 1.3
+
+
+# Uppgift 1.4
+
+
+# Uppgift 1.5
+
+
+# Uppgift 1.6
+
+
+# Uppgift 1.7
+
+
+# Uppgift 1.8
