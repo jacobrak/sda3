@@ -50,6 +50,8 @@ För varje deluppgift gäller
 df<-read.delim("doctorvisits.txt",sep =" ")
 ```
 
+# Histogram
+
 ```{r}
 # Max_numvisit varje visit har en break
 max_numvisit = max(df$numvisit)
