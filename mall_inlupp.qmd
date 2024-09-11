@@ -51,11 +51,12 @@ df<-read.delim("doctorvisits.txt",sep =" ")
 ```
 
 ```{r}
-
-hist(df$numvisit, col = "brown", breaks= 10)
+# Max_numvisit varje visit har en break
+max_numvisit = max(df$numvisit)
+hist(df$numvisit, col = "brown", breaks= max_numvisit)
 hist(df$age, col = "pink", breaks= 30)
 
-
+# Maxlength_educ varje educ har break använde round för att runda
 maxlength_educ <- round(max(df$educ))
 hist(df$educ, col = "brown", breaks= maxlength_educ)
 hist(df$loginc, col = "pink", breaks= 30)
@@ -66,9 +67,10 @@ hist(df$loginc, col = "pink", breaks= 30)
 ```{r}
 # Correlation matrix
 corr_matrix <- cor(df[sapply(df, is.numeric)])
-# tidyplot needs long format use melt()
+# tidyplot behöver long format använde melt()
 corr_matrix <- melt(corr_matrix)
 
+# Heat map
 ggplot(corr_matrix, aes(x = Var1, y= Var2, fill=value)) + 
   geom_tile() + scale_fill_gradient2(
     low = "white",      
@@ -82,6 +84,10 @@ ggplot(corr_matrix, aes(x = Var1, y= Var2, fill=value)) +
 ```
 
 # Uppgift 1.2
+
+```{r}
+
+```
 
 # Uppgift 1.3
 
