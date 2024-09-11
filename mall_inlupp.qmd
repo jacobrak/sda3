@@ -68,10 +68,10 @@ hist(df$loginc, col = "pink", breaks= 30)
 # Correlation matrix
 corr_matrix <- cor(df[sapply(df, is.numeric)])
 # tidyplot behöver long format använde melt()
-corr_matrix <- melt(corr_matrix)
+corr_matrix_melt <- melt(corr_matrix)
 
 # Heat map
-ggplot(corr_matrix, aes(x = Var1, y= Var2, fill=value)) + 
+ggplot(corr_matrix_melt, aes(x = Var1, y= Var2, fill=value)) + 
   geom_tile() + scale_fill_gradient2(
     low = "white",      
     mid = "brown",      
@@ -83,10 +83,20 @@ ggplot(corr_matrix, aes(x = Var1, y= Var2, fill=value)) +
   labs(x= NULL, y = NULL)
 ```
 
-# Uppgift 1.2
+# Uppgift 1.2 
+
+Vi valde att undersöka $X$ = Numvisits och $Y$ = age eftersom det finns ett logiskt argument att desto äldre man är desto mer läkarbesök behöver man.
+
+Correlation mella dessa varibler är också högre än de andra.
+
+```         
+                      numvisit         age        educ     loginc 
+           numvisit  1.00000000  0.09051274 -0.02298342 0.02443188
+```
 
 ```{r}
 
+df_loginc = df[, c(1,2)]
 ```
 
 # Uppgift 1.3
