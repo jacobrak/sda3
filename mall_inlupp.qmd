@@ -2,7 +2,7 @@
 title: "Statistik och dataanalys III, 15 hp "
 subtitle: "Inlämningsuppgift 1, 1.5 hp"
 author: 
-- Namn 1
+- Namn Jacob Rak
 - Namn 2
 - Namn 3
 date: last-modified
@@ -83,9 +83,9 @@ ggplot(corr_matrix_melt, aes(x = Var1, y= Var2, fill=value)) +
   labs(x= NULL, y = NULL)
 ```
 
-# Uppgift 1.2 
+# Uppgift 1.2
 
-Vi valde att undersöka $X$ = Numvisits och $Y$ = age eftersom det finns ett logiskt argument att desto äldre man är desto mer läkarbesök behöver man.
+Vi valde att undersöka $X$ = Numvisits och $y$ = age eftersom det finns ett logiskt argument att desto äldre man är desto flera läkarbesök har man.
 
 Correlation mella dessa varibler är också högre än de andra.
 
